@@ -7,6 +7,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Document</title>
     <style>
         *,
@@ -32,6 +38,141 @@
             padding: 0 !important;
             margin:0 !important;
             min-height: 0 !important;
+        }
+
+        /*--------------------------------------------------------------
+        # Sections General
+        --------------------------------------------------------------*/
+        .container {
+            padding: 60px 25px;
+        }
+
+        section {
+            padding: 60px 0;
+            margin: 30px 0;
+        }
+
+        .section-bg {
+        background-color: #FCEFF6;
+        }
+
+        .section-title {
+          margin-inline: auto;
+          text-align: center;
+          padding-bottom: 30px;
+        }
+
+        .section-title h2 {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        position: relative;
+        }
+
+        .section-title h2::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 120px;
+        height: 1px;
+        background: #ddd;
+        bottom: 1px;
+        left: calc(50% - 60px);
+        }
+
+        .section-title h2::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: #ED017F;
+        bottom: 0;
+        left: calc(50% - 20px);
+        }
+
+        .section-title p {
+        margin-bottom: 0;
+        }
+
+        /*--------------------------------------------------------------
+        # Services
+        --------------------------------------------------------------*/
+        .services .icon-box {
+            padding: 30px;
+            border-radius: 6px;
+            background: #fff;
+            transition: ease-in-out 0.3s;
+        }
+/* 
+        .services .icon-box i {
+        float: left;
+        color: #ED017F;
+        font-size: 40px;
+        line-height: 0;
+        } */
+
+        .services .icon-box h4 {
+        margin-left: 4px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-size: 18px;
+        }
+
+        .services .icon-box h4 a {
+        color: #384046;
+        text-decoration: none;
+        transition: 0.3s;
+        }
+
+        .services .icon-box p {
+        margin-left: 4px;
+        line-height: 24px;
+        font-size: 13px;
+        display: -webkit-box;
+        /* line-clamp: 2;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical; */
+        overflow: hidden;
+        }
+
+        .services .icon-box:hover {
+        box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.08);
+        }
+
+        .services .icon-box:hover h4 a {
+        color: #ED017F;
+        }
+
+        .back-to-top {
+        position: fixed;
+        visibility: hidden;
+        opacity: 0;
+        right: 15px;
+        bottom: 15px;
+        z-index: 996;
+        background: #ED017F;
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        transition: all 0.4s;
+        }
+
+        .back-to-top i {
+        font-size: 28px;
+        color: #fff;
+        line-height: 0;
+        }
+
+        .back-to-top:hover {
+        background: #94004F;
+        color: #fff;
+        }
+
+        .back-to-top.active {
+        visibility: visible;
+        opacity: 1;
         }
 
         .mySlides {
@@ -162,32 +303,32 @@
             padding: 40px;
             border-radius: 6px;
         }
-        .form-group {
+        .form-groups {
             margin-bottom: 32px;
         }
-        .form-group label {
+        .form-groups label {
             display: block;
             font-weight: 500;
             margin-bottom: 5px;
             color: white;
         }
-        .form-group.row {
+        .form-groups .row {
               display: flex;
               align-items: center;
               gap: 32px;
               width: 100%;
         }
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 18px;
-            font-size: 14px;
-            border: none;
-            border-radius: 6px;
+        .form-groups input,
+        .form-groups select {
+            width: 100% !important;
+            padding: 18px !important;
+            font-size: 14px !important;
+            border: none !important;
+            border-radius: 6px !important;
         }
 
-        .form-group .full-width {
-            width: 100%;
+        .form-groups .full-width {
+            width: 100% !important;
         }
 
         .btn {
@@ -207,19 +348,20 @@
 
         .btn:hover {
           background-color: rgb(223, 135, 11);
+          color: #FCEFF6;
         }
 
         select {
-          appearance: none;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          cursor: pointer;
+          appearance: none !important;
+          -webkit-appearance: none !important;
+          -moz-appearance: none !important;
+          cursor: pointer !important;
         }
 
         .custom-select-wrapper {
-          position: relative;
-          display: inline-block;
-          width: 100%;
+          position: relative !important;
+          display: inline-block !important;
+          width: 100% !important;
         }
 
         .categ{
@@ -304,18 +446,21 @@
         .head {
           font-size: 21px;
           color: #5a5f66;
+          font-weight: 600;
           margin-bottom: 6px;
         }
 
         .heads {
           font-size: 16px;
           color: #5a5f66;
+          font-weight: 600;
           margin-bottom: 6px;
         }
 
         .seo-container p {
           font-size: 14px;
           color: #5a5f66;
+          font-weight: 400;
         }
 
         @media screen and (min-width: 768px) {
@@ -545,11 +690,94 @@
     </div>
     -->
 
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+          <div class="section-title">
+              <h2>What we offer</h2>
+              <p>Let us walk you through: <strong>Read through our services offered</strong></p>
+          </div>
 
-      <div>
+          <div class="row">
+              <div class="col-md-6 mt-4 mt-lg-0 projects__card">
+                  <div>
+                      <div class="icon-box">
+                          <h4><a href="#">Your One-Stop Solution for Corporate Needs</a></h4>
+                          <p>
+                              Konga is committed to being your comprehensive partner for all corporate procurement needs including products for your corporative.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 mt-4 mt-lg-0 projects__card">
+                  <div>
+                      <div class="icon-box">
+                          <h4><a href="#">Efficient Digital Logistics</a></h4>
+                          <p>
+                              Konga’s logistics network is renowned for its reliability and speed, with over 253 comprehensively insured, trucks, vans and buses.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              
+              <!-- Repeat similar blocks for other services -->
+          </div>
+
+          <div class="row mt-3">
+              <div class="col-md-6 mt-4 mt-lg-0 projects__card">
+                  <div>
+                      <div class="icon-box">
+                          <h4><a href="#">Warehousing Infrastructure</a></h4>
+                          <p>
+                              Konga owns the largest network of distributed digital warehousing infrastructure nationwide.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 mt-4 mt-lg-0 projects__card">
+                  <div>
+                      <div class="icon-box">
+                          <h4><a href="#">Highly Competitive Prices</a></h4>
+                          <p>
+                              Konga offers highly competitive prices that deliver exceptional value for your investment.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <!-- Repeat similar blocks for other services -->
+          </div>
+
+          <div class="row mt-3">
+              <div class="col-md-6 mt-4 mt-lg-0 projects__card">
+                  <div>
+                      <div class="icon-box">
+                          <h4><a href="#">Annual Contracts with Fixed Prices</a></h4>
+                          <p>
+                              We also enter into annual contracts where prices are fixed, providing you with the stability and predictability needed for better financial planning.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 mt-4 mt-lg-0 projects__card">
+                  <div>
+                      <div class="icon-box">
+                          <h4><a href="#">Purchase Orders Made Simple</a></h4>
+                          <p>
+                              Konga is eager to participate in your bidding processes, offering competitive proposals that meet your specific requirements.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <!-- Repeat similar blocks for other services -->
+          </div>
+          
+      </div>
+  </section><!-- End Services Section -->
+
+      <!-- <div>
         <div class="heading">
           <h1>Our Services</h1>
-        </div>
+        </div> -->
     
         <div class="mySlides laptop">
             <img
@@ -604,7 +832,7 @@
         <div class="container-form">
             <form action="#" method="POST">
                 <!--  Company Name & Address  -->
-                <div class="form-group row full-width">
+                <div class="form-groups row full-width">
                   <div class="col first">
                     <label for="companyName">Company Name</label>
                     <input type="text" id="companyName" name="companyName" placeholder="Enter Company Name" required>
@@ -616,14 +844,14 @@
                 </div>
                 
                 <!--  Staff to Contact  -->
-                <div class="form-group full-width">
+                <div class="form-groups full-width">
                   <label for="staffContact">Contact Person</label>
                   <input type="text" id="staffContact" name="staffContact" placeholder="Enter Staff Name" required>
                 </div>
 
 
                 <!--  Telephone Number and Whatsapp Number  -->
-                <div class="form-group row full-width">
+                <div class="form-groups row full-width">
                   <div class="col first">
                     <label for="tel">Telephone Number</label>
                     <input type="number" id="tel" name="tel" placeholder="Enter Telephone Number" required>
@@ -635,14 +863,14 @@
                 </div>
                 
                  <!--  Email Address  -->
-                 <div class="form-group full-width">
+                 <div class="form-groups full-width">
                   <label for="emailAddress">Email Address</label>
                   <input type="email" id="emailAddress" name="emailAddress" placeholder="Enter Email Address" required>
                 </div>
                 
                 <!--  Product Categories  -->
 
-                <div class="form-group full-width">
+                <div class="form-groups full-width">
                   <label for="productCat">Product Categories</label>
                   <div class="custom-select-wrapper">
                     <select id="productCat" name="productCat" class="custom-select" required>
@@ -852,5 +1080,8 @@
       </div>
     </div>
     
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
   </body>
 </html>
