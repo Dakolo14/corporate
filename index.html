@@ -13,7 +13,13 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <title>Document</title>
+    <title>Konga Corporate - Office Supplies & Corporate Items for Businesses</title>
+    <meta name="description" content="Discover Konga Corporate, a branch of Konga Online, offering a wide range of office supplies and corporate items to offices, companies, and organizations. Shop genuine products at competitive prices with fast delivery and exceptional service. Elevate your business with Konga Corporate today!">
+    <!-- Favicon -->
+    <link rel="icon" href="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto/v1721911358/Konga%20Corporate%2024_07_2024/favicon-32x32.png" type="image/x-icon">
+    <!-- Additional SEO Meta Tags -->
+    <meta name="keywords" content="Konga Corporate, office supplies, corporate items, business supplies, Konga Online, genuine products, competitive prices, fast delivery, exceptional service, where to buy office supplies, office chair, office equipments">
+    <meta name="author" content="Konga Corporate">
     <style>
         *,
         *::before,
@@ -56,6 +62,24 @@
         background-color: #f8c7e0;
         }
 
+        header {
+          background-color: #E02C8C;
+          text-align: center;
+        }
+
+        footer {
+          background-color: #E02C8C;
+          text-align: center;
+          color: #fff;
+          padding: 14px !important;
+        }
+
+        header img {
+          margin-inline: auto;
+          max-width: fit-content;
+          margin: 10px !important;
+        }
+
         .section-title {
           margin-inline: auto;
           text-align: center;
@@ -63,23 +87,23 @@
         }
 
         .section-title h2 {
-        font-size: 32px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        padding-bottom: 20px;
-        position: relative;
+          font-size: 32px;
+          font-weight: 600;
+          margin-bottom: 20px;
+          padding-bottom: 20px;
+          position: relative;
         }
 
 
         .section-title h2::before {
-        content: "";
-        position: absolute;
-        display: block;
-        width: 120px;
-        height: 1px;
-        background: #ffffff;
-        bottom: 1px;
-        left: calc(50% - 60px);
+          content: "";
+          position: absolute;
+          display: block;
+          width: 120px;
+          height: 1px;
+          background: #ffffff;
+          bottom: 1px;
+          left: calc(50% - 60px);
         }
 
         .section-title h2::after {
@@ -177,7 +201,6 @@
         }
 
         .mySlides {
-            margin-top: 5px;
             width: 100%;
         }
 
@@ -579,7 +602,7 @@
           }
 
         /* Media query for mobile screens */
-        @media (max-width: 768px) {
+        @media (max-width: 680px) {
             .box {
                 width: 100%;
             }
@@ -592,6 +615,11 @@
               margin-bottom: 10px;
               padding-bottom: 14px;
               position: relative;
+            }
+
+            footer {
+              padding: 8px !important;
+              font-size: 12px;
             }
 
             .container {
@@ -799,6 +827,18 @@
   </head>
 
   <body>
+
+
+
+    <header>
+      <img
+        src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto/v1721912514/Konga%20Corporate%2024_07_2024/logo.png"
+        style="width: 100%; margin-bottom: 20px;"
+      />
+    </header>
+
+
+
     <div class="mySlides">
       <a id="dialog-trigger">
         <img
@@ -1018,6 +1058,10 @@
         </div>
       </div>
 
+      <footer>
+        <p>&copy; <span id="currentYear"></span> All rights reserved, Konga Corporate.</p>
+      </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <script>
@@ -1044,6 +1088,11 @@
         dialogOverlay.classList.add("hidden");
         dialogContent.classList.add("hidden");
       });
+
+      // Get the current year
+      const currentYear = new Date().getFullYear();
+      // Set the current year in the footer
+      document.getElementById('currentYear').textContent = currentYear;
     </script>
 
   </body>
