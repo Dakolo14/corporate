@@ -292,40 +292,34 @@
             font-weight: 600;
         }
 
-        .section-form {
-            background-color: #ED017F;
-            padding: 20px;
-            margin-top: 10px;
-        }
-
         .container-form {
-            max-width: 1280px;
             margin: 0 auto;
-            padding: 20px;
-            border-radius: 6px;
+            padding: 16px 0 0;
+            border-radius: 2px;
         }
         .form-groups {
-            margin-bottom: 28px;
+            margin-bottom: 16px;
         }
         .form-groups label {
             display: block;
-            font-weight: 500;
-            margin-bottom: 5px;
-            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: #252525;
         }
         .form-groups .row {
               display: flex;
               align-items: center;
-              gap: 32px;
+              gap: 16px;
               width: 100%;
         }
         .form-groups input,
         .form-groups select {
             width: 100% !important;
-            padding: 18px !important;
-            font-size: 14px !important;
-            border: none !important;
-            border-radius: 6px !important;
+            padding: 14px !important;
+            font-size: 12px !important;
+            border: 1px solid #E7E7E7 !important;
+            border-radius: 4px !important;
         }
 
         .form-groups .full-width {
@@ -333,22 +327,22 @@
         }
 
         .btn {
-          font-size: 22px;
-          font-weight: 600;
+          font-size: 14px;
+          font-weight: 500;
           color: #fff;
-          background-color: #F9A024;
+          background-color: #ED017F;
           border: none;
           margin-top: 12px;
-          border-radius: 6px;
-          text-transform: uppercase;
-          padding: 16px 10px;
+          border-radius: 4px;
+          text-transform: none;
+          padding: 12px 10px;
           width: 100%;
           cursor: pointer;
           transition: background-color .6s;
         }
 
         .btn:hover {
-          background-color: rgb(223, 135, 11);
+          background-color: #94004F;
           color: #FCEFF6;
         }
 
@@ -468,6 +462,102 @@
           font-weight: 400;
         }
 
+        /* BEGINNING OF DIALOG MODAL */
+        .hidden {
+          display: none;
+        }
+
+        /* Overlay */
+        .overlay {
+          position: fixed;
+          inset: 0;
+          z-index: 50;
+          background-color: rgba(0, 0, 0, 0.7);
+          animation: fade-in 0.2s;
+        }
+
+        /* Dialog */
+        .dialog {
+          position: fixed;
+          right: 0;
+          top: 0;
+          transform: translate(0, 0);
+          z-index: 51;
+          width: 100%;
+          max-width: 600px;
+          height: 100vh;
+          background: white;
+          padding: 20px;
+          border-radius: 4px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          animation: slide-in 0.5s;
+          overflow-y: auto; /* Allows scrolling if content overflows */
+        }
+
+        .dialog-header,
+        .dialog-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        #dialog-header {
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        #dialog-title {
+          font-size: 24px !important;
+          font-weight: bold;
+        }
+
+        #dialog-close {
+          background: #ED017F;
+          border-radius: 4px;
+          width: 28px;
+          height: 28px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          font-size: 28px;
+          font-weight: 600;
+          opacity: 0.8;
+          border: none;
+        }
+
+        .dialog-description {
+          margin-bottom: 20px;
+        }
+         
+        /*  --- FORM DESIGN  --- */
+
+        .form-img img {
+          width: 100%;
+        }
+
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes slide-in {
+          from {
+            transform: translateX(100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+
         @media screen and (min-width: 768px) {
             .form-group.row {
               display: flex;
@@ -509,7 +599,8 @@
             }
 
             .form-groups label {
-                font-size: 14px;
+                font-size: 12px;
+                margin-bottom: 2px;
             }
 
             .about-us__text {
@@ -525,6 +616,43 @@
                 height: auto;
                 max-height: 400px; /* Adjust height for mobile */
                 margin-inline: auto;
+            }
+
+            /* BEGINNING OF DIALOG  */
+            .dialog {
+              width: 80%;
+              height: 100vh;
+              border-radius: 4px;
+              padding: 18px 10px;
+              max-width: none;
+            }
+            #dialog-title {
+              font-size: 16px !important;
+              font-weight: bold;
+            }
+
+            #dialog-close {
+              background: #ED017F;
+              border-radius: 2px;
+              width: 24px;
+              height: 24px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: #fff;
+              font-size: 22px;
+              font-weight: 500;
+              opacity: 0.8;
+              border: none;
+            }
+            
+            .form-groups input,
+            .form-groups select {
+                width: 100% !important;
+                padding: 12px !important;
+                font-size: 10px !important;
+                border: 1px solid #E7E7E7 !important;
+                border-radius: 4px !important;
             }
 
             .laptop {
@@ -643,7 +771,7 @@
             }
 
             .container-form {
-                padding: 10px;
+                padding: 10px 0px;
                 border-radius: 6px;
             }
 
@@ -671,24 +799,108 @@
   </head>
 
   <body>
-    <div class="mySlides laptop">
-      <a href="#form-fill">
+    <div class="mySlides">
+      <a id="dialog-trigger">
         <img
           src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto/v1721816570/Konga%20Corporate%2024_07_2024/main-banner.png"
-          style="width: 100%"
+          style="width: 100%; cursor: pointer;"
           alt="Order Bulk Products Banner Image"
         />
       </a>
     </div>
-    
+<!--     
     <div class="mySlides mobile">
-      <a href="#form-fill">
+      <a id="dialog-trigger">
         <img
           src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto/v1721816569/Konga%20Corporate%2024_07_2024/main-banner-mob.png"
           style="width: 100%"
           alt="Order Bulk Products Banner Image"
         />
       </a>
+    </div> -->
+
+    <div id="dialog-portal">
+      <div id="dialog-overlay" class="overlay hidden"></div>
+      <div id="dialog-content" class="dialog hidden">
+        <div id="dialog-header">
+          <h2 id="dialog-title">Corporate Purchase Request Form</h2>
+          <button id="dialog-close">&times;</button>
+        </div>
+        <hr style="border: #a9a9a9 1px solid;">
+        <div id="dialog-body">
+          <div class="section-form" id="form-fill">
+            <div class="form-img">
+              <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto/v1721902038/Konga%20Corporate%2024_07_2024/contact-image.png" alt="">
+            </div>
+              <div class="container-form">
+                  <form action="#" method="POST">
+                      <!--  Company Name & Address  -->
+                      <div class="form-groups full-width">
+                        <label for="companyName">Company Name</label>
+                        <input type="text" id="companyName" name="companyName" placeholder="Enter Company Name" required>
+                      </div>
+                      <div class="form-groups full-width">
+                        <label for="companyAddress">Company Address</label>
+                        <input type="text" id="companyAddress" name="companyAddress" placeholder="Enter Company Address" required>
+                      </div>
+                      
+                      <!--  Staff to Contact  -->
+                      <div class="form-groups full-width">
+                        <label for="staffContact">Contact Person</label>
+                        <input type="text" id="staffContact" name="staffContact" placeholder="Enter your Full Name" required>
+                      </div>
+      
+      
+                      <!--  Telephone Number  -->
+                        <div class="form-groups full-width">
+                          <label for="tel">Phone Number</label>
+                          <input type="number" id="tel" name="tel" placeholder="Enter your Phone Number" required>
+                        </div>
+
+                        <!--  Whatsapp Number   -->
+                        <div class="form-groups full-width">
+                          <label for="whatsapp">Whatsapp Number</label>
+                          <input type="number" id="whatsapp" name="whatsapp" placeholder="Enter your Whatsapp Number" required>
+                        </div>
+                      
+                       <!--  Email Address  -->
+                       <div class="form-groups full-width">
+                        <label for="emailAddress">Email Address</label>
+                        <input type="email" id="emailAddress" name="emailAddress" placeholder="Enter your Email Address" required>
+                      </div>
+                      
+                      <!--  Product Categories  -->
+      
+                      <div class="form-groups full-width">
+                        <label for="productCat">Product Categories</label>
+                        <div class="custom-select-wrapper">
+                          <select id="productCat" name="productCat" class="custom-select" required>
+                            <option value="">Choose Category</option>
+                            <option value="productCat1">Computer And Accessories</option>
+                            <option value="productCat2">Phones and Tablets</option>
+                            <option value="productCat3">Electronics</option>
+                            <option value="productCat4">Home and Kitchen</option>
+                            <option value="productCat5">Generators, Inverters and Solar</option>
+                            <option value="productCat6">Grains, Food and Groceries</option>
+                            <option value="productCat7">Stationery and Office Supplies</option>
+                            <option value="productCat8">Wines and Spirits</option>
+                            <option value="productCat9">Building and Industrial</option>
+                            <option value="productCat10">Automative and Equipment</option>
+                            <option value="productCat11">Health Factory</option>
+                            <option value="productCat12">Laboratory Equipment</option>
+                            <option value="productCat13">Ventilation and Air Conditioning</option>
+                            <option value="productCat14">Microsoft Cloud Solutions Deployment (Azure)</option>
+                            <option value="productCat15">Managed Printing Services</option>
+                          </select>
+                        </div>
+                      </div>
+                      
+                      <button type="submit" class="btn mb-5">Submit Form</button>
+                    </form>
+                </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- ======= Services Section ======= -->
@@ -794,124 +1006,44 @@
         <div class="mySlides laptop">
           <img
             src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto/v1721816569/Konga%20Corporate%2024_07_2024/team-3.png"
-            style="width: 100%"
+            style="width: 100%; margin-bottom: 20px;"
           />
         </div>
         
         <div class="mySlides mobile">
             <img
               src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto/v1721816569/Konga%20Corporate%2024_07_2024/team-3-mob.png"
-              style="width: 100%"
+              style="width: 100%; margin-bottom: 20px;"
             />
         </div>
       </div>
 
-
-    <div class="section-form" id="form-fill">
-      <div class="header" style="color: #fff; text-align: center;">
-        <p>Place your Order</p>
-        <h1>Take a moment to fill out the form</h1>
-      </div>
-        <div class="container-form">
-            <form action="#" method="POST">
-                <!--  Company Name & Address  -->
-                <div class="form-groups row full-width">
-                  <div class="col first">
-                    <label for="companyName">Company Name</label>
-                    <input type="text" id="companyName" name="companyName" placeholder="Enter Company Name" required>
-                  </div>
-                  <div class="col">
-                    <label for="companyAddress">Company Address</label>
-                    <input type="text" id="companyAddress" name="companyAddress" placeholder="Enter Company Address" required>
-                  </div>
-                </div>
-                
-                <!--  Staff to Contact  -->
-                <div class="form-groups full-width">
-                  <label for="staffContact">Contact Person</label>
-                  <input type="text" id="staffContact" name="staffContact" placeholder="Enter Staff Name" required>
-                </div>
-
-
-                <!--  Telephone Number and Whatsapp Number  -->
-                <div class="form-groups row full-width">
-                  <div class="col first">
-                    <label for="tel">Telephone Number</label>
-                    <input type="number" id="tel" name="tel" placeholder="Enter Telephone Number" required>
-                  </div>
-                  <div class="col first">
-                    <label for="whatsapp">Whatsapp Number</label>
-                    <input type="number" id="whatsapp" name="whatsapp" placeholder="Enter Whatsapp Number" required>
-                  </div>
-                </div>
-                
-                 <!--  Email Address  -->
-                 <div class="form-groups full-width">
-                  <label for="emailAddress">Email Address</label>
-                  <input type="email" id="emailAddress" name="emailAddress" placeholder="Enter Email Address" required>
-                </div>
-                
-                <!--  Product Categories  -->
-
-                <div class="form-groups full-width">
-                  <label for="productCat">Product Categories</label>
-                  <div class="custom-select-wrapper">
-                    <select id="productCat" name="productCat" class="custom-select" required>
-                      <option value="">Choose Category</option>
-                      <option value="productCat1">Computer And Accessories</option>
-                      <option value="productCat2">Phones and Tablets</option>
-                      <option value="productCat3">Electronics</option>
-                      <option value="productCat4">Home and Kitchen</option>
-                      <option value="productCat5">Generators, Inverters and Solar</option>
-                      <option value="productCat6">Grains, Food and Groceries</option>
-                      <option value="productCat7">Stationery and Office Supplies</option>
-                      <option value="productCat8">Wines and Spirits</option>
-                      <option value="productCat9">Building and Industrial</option>
-                      <option value="productCat10">Automative and Equipment</option>
-                      <option value="productCat11">Health Factory</option>
-                      <option value="productCat12">Laboratory Equipment</option>
-                      <option value="productCat13">Ventilation and Air Conditioning</option>
-                      <option value="productCat14">Microsoft Cloud Solutions Deployment (Azure)</option>
-                      <option value="productCat15">Managed Printing Services</option>
-                    </select>
-                  </div>
-                </div>
-                
-                <button type="submit" class="btn">Submit</button>
-              </form>
-          </div>
-    </div>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <script>
-      /*=============== EMAIL JS ===============*/
-      const contactForm = document.getElementById('contact-form'),
-            contactMessage = document.getElementById('contact-message')
+      const dialogTrigger = document.getElementById("dialog-trigger");
+      const dialogOverlay = document.getElementById("dialog-overlay");
+      const dialogContent = document.getElementById("dialog-content");
+      const dialogCloseButtons = document.querySelectorAll(
+        "#dialog-close, #dialog-close-footer"
+      );
 
-      const sendEmail = (e) => {
-          e.preventDefault()
+      dialogTrigger.addEventListener("click", () => {
+        dialogOverlay.classList.remove("hidden");
+        dialogContent.classList.remove("hidden");
+      });
 
-          // serviceID - templateID - #form - publicKey
-          emailjs.sendForm('service_z77nypk','template_krsop85','#contact-form','tJqN3BfW5Ssh4oL8V').then(() => {
-              //Show sent successfully
-              contactMessage.textContent = 'Message sent successfully ✅'
-              
-              // Remove message after four seconds
-              setTimeout(() => {
-                  contactMessage.textContent = ''
-              }, 2000)
+      dialogCloseButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          dialogOverlay.classList.add("hidden");
+          dialogContent.classList.add("hidden");
+        });
+      });
 
-              // Clear input fields
-              contactForm.reset()
-          }, () => {
-              // Show error message
-              contactMessage.textContent = ' Message not sent (service error) ❌'
-          })
-      }
-
-      contactForm.addEventListener('submit', sendEmail)  
+      dialogOverlay.addEventListener("click", () => {
+        dialogOverlay.classList.add("hidden");
+        dialogContent.classList.add("hidden");
+      });
     </script>
 
   </body>
